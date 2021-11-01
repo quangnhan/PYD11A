@@ -1,2 +1,2 @@
 1) Tính tổng tất cả các số lẻ từ 1 - 10000
-2) Tính tổng các số chia hết cho 3 và 5 từ 1 - 10000
+2) Tính tổng các số chia hết cho 3 và 5 từ 1 - 10000, lấy tổng đó trừ đi những số còn lại
