@@ -1,10 +1,6 @@
-a = 4
-b = 4
-c = 5
-
-
-
-if a==b and b==c:
-    print("Equal")
-else:
-    print("Not equal")
+sum_number = 0
+for i in range(0, 10):
+    if(i%2 != 0):
+    
+        sum_number =+ i
+        print(sum_number)
