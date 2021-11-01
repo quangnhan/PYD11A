@@ -1,8 +1,4 @@
-something = ["😎", 123, "thong", 4.5]
-
-x, y, z, a = something
-
-print(x)
-print(y)
-print(z)
-print(a)
+tổng_số_lẻ = 0
+for i in range(1, 1000, 2):
+    tổng_số_lẻ += i
+print(tổng_số_lẻ)
