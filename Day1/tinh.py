@@ -1,9 +1,10 @@
-x = 5
-y = "John"
-print(x)
-print(y)
+a = 4
+b = 4
+c = 5
 
 
-x1 = str(3)
 
-print(x1, type(x1))
+if a==b and b==c:
+    print("Equal")
+else:
+    print("Not equal")
