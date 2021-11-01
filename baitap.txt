@@ -1,0 +1,1 @@
+1) Tính tổng tất cả các số lẻ từ 1 - 10000

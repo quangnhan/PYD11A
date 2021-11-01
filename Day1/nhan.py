@@ -1,6 +1,2 @@
-number = ["Orange", "Apple", "Mango"]
-x, y, z = number
-
-print(x)
-print(y)
-print(z)
+for i in range(0, 10):
+    print(i)
