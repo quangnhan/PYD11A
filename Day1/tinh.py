@@ -10,6 +10,7 @@ else:
     for i in range(3, n, 2):
         if (n % i == 0):
             prime_number = False
+            break
  
 if prime_number == True:
     print(n, " là số nguyên tố")
