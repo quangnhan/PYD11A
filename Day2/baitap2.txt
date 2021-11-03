@@ -1,0 +1,3 @@
+- Copy dữ liệu ở trong file data.json và gán vào 1 biến
+- Lấy tất cả tên sản phẩm trong đó không có tên sản phẩm bị trùng lặp
+- Tìm các sản phẩm bị trùng tên và số sản phẩm có cùng tên đó
