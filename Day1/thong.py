@@ -1,18 +1,8 @@
-sum = 0
-for i in range(1, 1000, 2):
-    sum += i
-print(sum)
+n = int(input("enter number: "))
 
-
-sum_divide_3_5 = 0
-tổng_còn_lại = 0
-for i in range(1, 1000):
-    if i % 3 == 0 and i % 5 == 0:
-        sum_divide_3_5 += i
-    else:
-        tổng_còn_lại += i
-
-
-print(sum_divide_3_5)
-print(tổng_còn_lại)
-print(sum_divide_3_5 - tổng_còn_lại)
+for i in range(2, n - 1):
+    if n % i == 0:
+        print("It is NOT a prime number")
+        break
+else:
+    print("prime number")
