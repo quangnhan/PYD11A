@@ -1,4 +1,4 @@
-[
+product_list = [
     {
     "name": "Hat",
     "image": "http://placeimg.com/640/480/nightlife",
@@ -175,3 +175,26 @@
     "categoryid": "1"
     }
 ]
+
+sale_list = [
+    [
+        {
+            "customer": "Nhan",
+            "product": 1,
+            "quantity": 3
+        },
+        {
+            "customer": "Nathan",
+            "product": 9,
+            "quantity": 20
+        }
+    ]
+
+]
+# print(sale_list)
+for i in range(len(sale_list)):
+    # print(sale_list[i])
+    for j in range(len(sale_list[i])):
+        # print(sale_list[i][j])
+        for product in range(sale_list[i][j]):
+            print(product)

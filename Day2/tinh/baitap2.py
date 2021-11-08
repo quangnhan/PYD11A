@@ -1,4 +1,4 @@
-[
+list_product = [
     {
     "name": "Hat",
     "image": "http://placeimg.com/640/480/nightlife",
@@ -175,3 +175,18 @@
     "categoryid": "1"
     }
 ]
+
+set_name = set()
+for product in list_product:
+    name = product["name"]
+    set_name.add(name)
+
+dict_name = dict()
+for product in list_product:
+    name = product["name"]
+
+    if dict_name.get(name):
+        dict_name[name] += 1
+    else:
+        dict_name[name] = 1
+print(dict_name)

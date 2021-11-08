@@ -189,3 +189,5 @@ for product in list_product:
         dict_name[name] += 1
     else:
         dict_name[name] = 1
+
+print(dict_name)
