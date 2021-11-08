@@ -16,13 +16,20 @@ class Server:
             },
         }
 
+    # def get_full_name(self, email):
+    #     for contact in self.CUSTOMERS:
+    #         # print(contact, email)
+    #         if contact == email:
+    #             return contact[1]["full_name"]
+    #             print("full_name: ", contact[1]["full_name"])
+
     def get_full_name(self, email):
-        for contact in self.CUSTOMERS:
-            # print(contact, email)
-            if contact == email:
-                print("full_name: ", contact[1]["full_name"])
+        if self.CUSTOMERS.get(email):
+            return self.CUSTOMERS[email]["full_name"]
+        return "Email not exists"
 
 
 if __name__ == "__main__":
     server = Server("Mock Server")
-    server.get_full_name("thong@gmail.com")
+    full_name = server.get_full_name("thong@gmail.com")
+    print(full_name)
