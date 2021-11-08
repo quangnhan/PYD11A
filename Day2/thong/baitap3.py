@@ -1,3 +1,8 @@
+orders = [
+    {"customer": "Nhan", "product": 1, "quantity": 3},
+    {"customer": "Nathan", "product": 9, "quantity": 20},
+]
+
 product_list = [
     {
         "name": "Hat",
@@ -176,27 +181,21 @@ product_list = [
     },
 ]
 
-set_name = set()
+order_list = {}
+
+for order in orders:
+    id = order["product"]
+    quantity = order["quantity"]
+    order_list[id] = [quantity]
+
+print("order_list: ", order_list)
+
+order_total = []
 
 for product in product_list:
-    name = product["name"]
-    set_name.add(name)
+    for order in orders:
+        if order["product"] == int(product["id"]):
+            total = order["quantity"] * float(product["price"])
+            order_total.append(total)
 
-
-print(len(product_list))
-
-print("set_name: ", len(set_name))
-print("set_name: ", set_name)
-
-dict_name = dict()
-
-for product in product_list:
-    name = product["name"]
-
-    if dict_name.get(name):
-        dict_name[name] += 1
-    else:
-        dict_name[name] = 1
-
-print("dict_name len: ", len(dict_name))
-print("dict_name: ", dict_name)
+print("order_total: ", order_total)
