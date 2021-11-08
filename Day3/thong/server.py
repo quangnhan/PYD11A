@@ -1,18 +1,18 @@
 class Server:
-    def __init__(self, name):
+    def __init__(self, name="No Name Server"):
         self.name = name
         self.CUSTOMERS = {
             "thong@gmail.com": {
                 "phone": "1111111111",
-                "full_name": "Vo Quang Nhan 1",
+                "full_name": "Thong Tran",
             },
             "tinh@gmail.com": {
                 "phone": "2222222222",
-                "full_name": "Vo Quang Nhan 2",
+                "full_name": "Tong Dang Tinh",
             },
             "nhan@gmail.com": {
                 "phone": "333333333",
-                "full_name": "Vo Quang Nhan 3",
+                "full_name": "Vo Quang Nhan",
             },
         }
 
