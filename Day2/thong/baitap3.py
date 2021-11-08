@@ -193,9 +193,9 @@ print("order_list: ", order_list)
 order_total = []
 
 for product in product_list:
-    for order in order_list:
-        if int(order[0]) == int(product["id"]):
-            total = int(order[1]) * int(product["price"])
+    for order in orders:
+        if order["product"] == int(product["id"]):
+            total = order["quantity"] * float(product["price"])
             order_total.append(total)
 
 print("order_total: ", order_total)
