@@ -1,0 +1,9 @@
+1) Tạo class Server
+2) Tạo danh sách khách hàng dạng sau:
+CUSTOMERS = {
+    'nhan@gmail.com': {
+        'phone': '123123',
+        'full_name': 'Vo Quang Nhan',
+}
+3) Viết hàm get_full_name(email) để lấy về họ và tên của khách hàng
+Nếu không tìm thấy thì thông báo: "Email này không tồn tại"
