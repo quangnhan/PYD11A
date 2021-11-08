@@ -1,0 +1,4 @@
+1) Tạo class Momo
+2) Tạo đối tượng momo = Momo(email)
+3) Lấy họ và tên của khách hàng self.full_name = server.get_full_name(email)
+4) In ra màn hình câu chào
