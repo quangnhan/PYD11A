@@ -1,5 +1,5 @@
 class Server:
-    def __init__(self, name):
+    def __init__(self, name="No name"):
         self.name = name
         self.CUSTOMERS = {
             "thong@gmail.com": {
