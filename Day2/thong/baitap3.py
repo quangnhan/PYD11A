@@ -181,14 +181,6 @@ product_list = [
     },
 ]
 
-order_list = {}
-
-for order in orders:
-    id = order["product"]
-    quantity = order["quantity"]
-    order_list[id] = [quantity]
-
-print("order_list: ", order_list)
 
 order_total = []
 
