@@ -1,3 +1,4 @@
 1) Update biến CUSTOMERS thành biến private 
-2) Viết hàm get_customer để cho phép người dùng xem danh sách khách hàng
-3) Viết hàm set_customer(email, full_name, phone) để thêm 1 customer mới vào trong biến CUSTOMERS
+2) Viết hàm get_all_customers để cho phép người dùng xem danh sách khách hàng
+3) Viết hàm get_customer(email) để lấy thông tin của 1 người dùng, nếu không có thì trả về None
+4) Viết hàm set_customer(email, full_name, phone) để thêm 1 customer mới vào trong biến CUSTOMERS
