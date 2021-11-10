@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 class Server:
     def __init__(self, name="No Name Server"):
         self.name = name
@@ -15,6 +18,7 @@ class Server:
                 "full_name": "Vo Quang Nhan",
             },
         }
+        self.__log = list()
 
     # def get_full_name(self, email):
     #     for contact in self.CUSTOMERS:
@@ -24,6 +28,8 @@ class Server:
     #             print("full_name: ", contact[1]["full_name"])
 
     def get_full_name(self, email):
+        self.__set_log(f"{email} get name at {str(datetime.now())}")
+
         if self.__CUSTOMERS.get(email):
             return self.__CUSTOMERS[email]["full_name"]
         return "Email not exists"
@@ -35,23 +41,36 @@ class Server:
         return all_customer
 
     def get_customer_info(self, email):
+        self.__set_log(f"{email} get a customer info at {str(datetime.now())}")
+
         all_info = []
         if self.__CUSTOMERS.get(email):
             return self.__CUSTOMERS[email]
         return "User not exist"
 
     def set_customer(self, email, full_name, phone):
+        self.__set_log(f"{email} set new customer at {str(datetime.now())}")
+
         self.__CUSTOMERS[email] = {"phone": phone, "full_name": full_name}
         return self.__CUSTOMERS
+
+    def __set_log(self, message):
+        self.__log.append(message)
+
+    def get_log(self):
+        for log in self.__log:
+            print(log)
 
 
 if __name__ == "__main__":
     server = Server("Mock Server")
     full_name = server.get_full_name("thong@gmail.com")
-    print(full_name)
+    print("thong@gmail.com: ", full_name)
     all_customer = server.get_all_customer()
     print(all_customer)
     all_info = server.get_customer_info("thong@gmail.com")
     print(all_info)
     set_customer = server.set_customer("guest@gmail.com", "Mister Guest", "44444444")
     print(set_customer)
+
+    server.get_log()
