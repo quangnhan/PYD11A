@@ -30,10 +30,19 @@ class Server:
 
     def get_all_customer(self):
         all_customer = []
-        for customer in self.__CUSTOMERS:
-            print(customer.get("full_name"))
-        #     all_customer.append(customer["full_name"])
-        # return all_customer
+        for key in self.__CUSTOMERS:
+            all_customer.append(self.__CUSTOMERS[key]["full_name"])
+        return all_customer
+
+    def get_customer_info(self, email):
+        all_info = []
+        if self.__CUSTOMERS.get(email):
+            return self.__CUSTOMERS[email]
+        return "User not exist"
+
+    def set_customer(self, email, full_name, phone):
+        self.__CUSTOMERS[email] = {"phone": phone, "full_name": full_name}
+        return self.__CUSTOMERS
 
 
 if __name__ == "__main__":
@@ -42,3 +51,7 @@ if __name__ == "__main__":
     print(full_name)
     all_customer = server.get_all_customer()
     print(all_customer)
+    all_info = server.get_customer_info("thong@gmail.com")
+    print(all_info)
+    set_customer = server.set_customer("guest@gmail.com", "Mister Guest", "44444444")
+    print(set_customer)
