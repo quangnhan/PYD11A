@@ -41,7 +41,7 @@ class Server:
         return all_customer
 
     def get_customer_info(self, email):
-        self.__set_log(f"{email} get a customer info at {str(datetime.now())}")
+        self.__set_log(f"{email} get full customer info at {str(datetime.now())}")
 
         all_info = []
         if self.__CUSTOMERS.get(email):
@@ -49,7 +49,7 @@ class Server:
         return "User not exist"
 
     def set_customer(self, email, full_name, phone):
-        self.__set_log(f"{email} set new customer at {str(datetime.now())}")
+        self.__set_log(f"{email} were set as a new customer at {str(datetime.now())}")
 
         self.__CUSTOMERS[email] = {"phone": phone, "full_name": full_name}
         return self.__CUSTOMERS
@@ -73,4 +73,4 @@ if __name__ == "__main__":
     set_customer = server.set_customer("guest@gmail.com", "Mister Guest", "44444444")
     print(set_customer)
 
-    server.get_log()
+    log = server.get_log()
