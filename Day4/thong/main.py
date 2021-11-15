@@ -2,8 +2,10 @@ class PaymentApp:
     def __init__(self, username, password):
         self.username = username
         self.password = password
+        self.amount = 0
 
     def pay(self, amount):
+        self.amount = amount
         print(f"Confirm payment of {amount}")
 
 
@@ -20,4 +22,4 @@ class Zalo_Pay(PaymentApp):
 
 
 momo = Momo("thongqt", "password123")
-momo.pay("123.00 USD")
+momo.pay(123.00)
