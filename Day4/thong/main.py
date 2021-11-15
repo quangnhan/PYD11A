@@ -1,3 +1,6 @@
+from momo_server import MoMoServer
+
+
 class PaymentApp:
     def __init__(self, username, password):
         self.username = username
@@ -5,12 +8,17 @@ class PaymentApp:
         self.amount = 0
 
     def pay(self, amount):
+
         self.amount = amount
-        print(f"Confirm payment of {amount}")
+        print(f"Confirm payment of {amount}.00 USD")
 
 
-class Momo(PaymentApp):
-    pass
+class Momo(MoMoServer):
+    def __init__(self, username, password):
+        super().__init__(username, password)
+        server = MoMoServer()
+        self.amount = server.get_amount(self.username, self.password)
+        return f"The Momo Amount is {self.amount}"
 
 
 class VNPay(PaymentApp):
@@ -21,5 +29,6 @@ class Zalo_Pay(PaymentApp):
     pass
 
 
-momo = Momo("thongqt", "password123")
-momo.pay(123.00)
+momo = Momo("username 2", "password 2")
+momo_amount = momo.get_amount("username 2", "password 2")
+print(momo_amount)
