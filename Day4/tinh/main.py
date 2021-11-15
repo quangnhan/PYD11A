@@ -21,6 +21,18 @@ class Momo(PaymentApp):
         super().__init__(username, password)
         server = MoMoServer()
         self.amount = float(server.get_amount(username, password))
+    
+    def discount(self, don_hang, gia_hang):
+        pay_total = 0
+        self.don_hang = don_hang
+        self.gia_hang = gia_hang
+       
+        if don_hang > 0:
+            pay_total = (don_hang * gia_hang *20)/100
+            print(pay_total)
+        else:
+            print("Ban khong mua hang nen ko duoc giam gia")
+            
 
 class VNPay(PaymentApp):
     def __init__(self, username, password):
@@ -37,8 +49,10 @@ class Zalo_Pay(PaymentApp):
 
 user = Momo("username 2", "password 2")
 print(user.amount)
-user = VNPay("username 2", "password 2")
-print(user.amount)
+print(user.discount(0,0))
 
-user = Zalo_Pay("username 2", "password 2")
-print(f"so du {user.amount}")
+# user = VNPay("username 2", "password 2")
+# print(user.amount)
+
+# user = Zalo_Pay("username 2", "password 2")
+# print(f"so du {user.amount}")
