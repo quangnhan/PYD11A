@@ -1,34 +1,52 @@
 from momo_server import MoMoServer
+from zalopay_server import ZaloPayServer
+from vnpay_server import VNPayServer
 
 
 class PaymentApp:
+    amount = 0
+
     def __init__(self, username, password):
         self.username = username
         self.password = password
-        self.amount = 0
 
     def pay(self, amount):
+        if self.amount >= amount:
+            self.amount -= amount
 
-        self.amount = amount
-        print(f"Confirm payment of {amount}.00 USD")
+            print(f"Confirm payment of {amount}.00 USD")
+        else:
+            print("Not enough money bro")
 
 
-class Momo(MoMoServer):
+class Momo(PaymentApp):
     def __init__(self, username, password):
         super().__init__(username, password)
         server = MoMoServer()
-        self.amount = server.get_amount(self.username, self.password)
-        return f"The Momo Amount is {self.amount}"
+        self.amount = float(server.get_amount(username, password))
 
 
 class VNPay(PaymentApp):
-    pass
+    def __init__(self, username, password):
+        super().__init__(username, password)
+        server = VNPayServer()
+        self.amount = float(server.get_amount(username, password))
 
 
-class Zalo_Pay(PaymentApp):
-    pass
+class ZaloPay(PaymentApp):
+    def __init__(self, username, password):
+        super().__init__(username, password)
+        server = ZaloPayServer()
+        self.amount = float(server.get_amount(username, password))
 
 
-momo = Momo("username 2", "password 2")
-momo_amount = momo.get_amount("username 2", "password 2")
-print(momo_amount)
+user_momo = Momo("username 3", "password 3")
+print(f"Your Momo walle has {user_momo.amount} USD")
+
+user_vnpay = VNPay("username 3", "password 3")
+print(f"Your VNPay wallet has {user_vnpay.amount} USD")
+
+user_zalopay = ZaloPay("username 3", "password 3")
+print(f"Your Zalo Pay has {user_zalopay.amount} USD")
+
+user_momo.pay(102)
