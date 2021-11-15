@@ -1,23 +1,53 @@
-# class Human:
-#     def __init__(self, first_name, last_name):
-#         self.__first_name = first_name
-#         self.__last_name = last_name
-    
-#     def say_hi(self):
-#         print(f"{self.__first_name} {self.__last_name} say hello world!")
-    
-#     def get_first_name(self):
-#         return self.__first_name
+from momo_server import MoMoServer
+from vnpay_server import VNPayServer
+from zalopay_server import ZaloPayServer
 
-# class Student(Human):
-#     pass
+class PaymentApp:
+    amount = 0
 
-# class Worker(Human):
-#     pass
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
 
-# # human = Human("Vo", "Quang Nhan")
-# # human.say_hi()
+    def pay(self, amount):
+        if self.amount >= amount:
+            self.amount -= amount
+            print(f"Confirm payment of {amount}")
+        else:
+            print("Your retain is not enough")
 
-# student = Student("Vo", "Quang Nhan")
-# student.say_hi()
-# print(student.get_first_name())
+    def say_hi(self):
+        print(f"Hello {self.username}")
+
+class Momo(PaymentApp):
+    discount = 0.15
+
+    def __init__(self, username, password):
+        super().__init__(username, password)
+        server = MoMoServer()
+        self.amount = float(server.get_amount(username, password))
+
+    def say_hi(self):
+        print(f"Momo hello {self.username}")
+
+class VNPay(PaymentApp):
+    def __init__(self, username, password):
+        super().__init__(username, password)
+        server = VNPayServer()
+        self.amount = float(server.get_amount(username, password))
+
+
+class ZaloPay(PaymentApp):
+    def __init__(self, username, password):
+        super().__init__(username, password)
+        server = ZaloPayServer()
+        self.amount = float(server.get_amount(username, password))
+
+
+user = Momo("username 2", "password 2")
+# user = Momo("username 2", "password 2")
+# user = VNPay("username 2", "password 2")
+# print(user.amount)
+# user.pay(100)
+
+user.say_hi()

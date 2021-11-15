@@ -1,0 +1,3 @@
+1) Riêng ví momo có chương trình giảm giá 20% cho mỗi đơn hàng
+2) Riêng ví VN Pay có lưu lại lịch sử thanh toán
+3) Riêng ví Zalo Pay khi mua 10 đơn hàng thì đơn hàng thứ 11 giảm giá 70%
