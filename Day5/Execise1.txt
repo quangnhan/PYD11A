@@ -1,0 +1,1 @@
+Viết class PPTX có 1 hàm là draw_table

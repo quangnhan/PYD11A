@@ -15,7 +15,7 @@ class Excel:
         header_format = workbook.add_format({
             'bold': True,
             'text_wrap': True,
-            'valign': 'top',gi
+            'valign': 'top',
             'fg_color': '#D7E4BC',
             'border': 1})
 
