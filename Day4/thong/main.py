@@ -98,7 +98,7 @@ class ZaloPay(PaymentApp):
             print("Not enough money bro")
 
 
-# exercise 1
+# exercise 1 + exercise 2
 # user_momo = Momo("username 3", "password 3")
 # print(f"Your Momo walleT has {user_momo.amount} USD")
 
@@ -109,13 +109,16 @@ user_zalopay = ZaloPay("username 2", "password 2")
 print(f"Your Zalo Pay has {user_zalopay.amount} USD")
 
 
-# exercise 3
+# exercise 3 - momo discount
 
 # user_momo.pay(100)
+
+# exercise 3 - vnpay log
 # user_vnpay.pay(200)
 # user_vnpay.get_log()
 
 
+# exercise 3 - zalo pay discount on 11th order
 user_zalopay.pay(10)
 user_zalopay.pay(10)
 user_zalopay.pay(10)
@@ -140,7 +143,6 @@ user_zalopay.pay(10)
 user_zalopay.pay(10)
 user_zalopay.pay(10)
 user_zalopay.pay(10)
-# order number 21
 user_zalopay.pay(10)
 # order number 22
 user_zalopay.pay(10)
