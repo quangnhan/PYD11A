@@ -1,0 +1,2 @@
+- Tạo class TikiProduct
+- Thêm trường code vào mỗi user

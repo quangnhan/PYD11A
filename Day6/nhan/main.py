@@ -1,12 +1,12 @@
 import uuid
-from server import TikiAPI
+from tiki_user import TikiUser
 
-tiki = TikiAPI()
-data = {
-    "id": uuid.uuid1(),
-    "name": "Nhan",
-    "job": "Developer"
-}
-response = tiki.create(data)
+# tiki = TikiUser()
+# # response = tiki.get_all()
 
-# print(uuid.uuid1())
+# data = {"name": "Nathan", "job": "Developer"}
+# response = tiki.create(data)
+
+# print(response)
+
+print(uuid.uuid1())
