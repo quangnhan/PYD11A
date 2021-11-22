@@ -1,5 +1,4 @@
 import requests
-from requests.sessions import _Data
 
 
 class TikiAPI:
@@ -8,7 +7,7 @@ class TikiAPI:
 
     def get_all_users(self):
         endpoint = "users"
-        response = request.get(f"{self.__url}/{endpoint}")
+        response = requests.get(f"{self.__url}/{endpoint}")
         data = response.json()
         return data
 
@@ -20,20 +19,20 @@ class TikiAPI:
 
     def create_user(self, data):
         endpoint = "users"
-        response = requests.post(f"{self.__url}/{endpoint}", data)
-        return data
+        response = requests.post(f"{self.__url}/{endpoint}", data=data)
+        return response.json()
 
-    def edit_user(self, data, id):
+    def edit_user(self, id, data):
         endpoint = f"users/{id}"
-        response = requests.put(f"{self.__url}/{endpoint}", data)
-        return data
+        response = requests.put(f"{self.__url}/{endpoint}", data=data)
+        return response.json()
 
     def delete_user(self, id):
         endpoint = f"users/{id}"
-        response = request.delete(f"{self.__url}/{endpoint}")
-        return data
+        response = requests.delete(f"{self.__url}/{endpoint}")
+        return response.json()
 
     def get_by_user_id(self, id):
         endpoint = f"users/{id}"
-        response = request.get(f"{self.__url}/{endpoint}")
-        return data
+        response = requests.get(f"{self.__url}/{endpoint}")
+        return response.json()
