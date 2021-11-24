@@ -1,4 +1,3 @@
-import requests
 from tiki import Tiki
 
 class TikiProduct(Tiki):
