@@ -1,0 +1,5 @@
+1) Tạo database school
+2) Tạo bảng user(id, name, email)
+3) Tạo bảng class(id, name)
+4) Lấy dữ liệu từ bảng user, class
+5) Thêm dữ liệu vào bảng user, class

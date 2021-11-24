@@ -8,9 +8,11 @@ conn = psycopg2.connect(database="shop",
 
 cur = conn.cursor()
 
+cur.execute("INSERT INTO public.products (id, name, price) VALUES (3, 'T-Shirt', 200);")
 cur.execute("SELECT * FROM public.products")
 rows = cur.fetchall()
 for row in rows:
    print(row)
 
+conn.commit()
 conn.close()
