@@ -1,0 +1,6 @@
+1) Tạo bảng user có các cột sau 
+- id : interger
+- name : text
+- phone : text
+
+2) Viết code để lấy dữ liệu từ DB cho bảng user
