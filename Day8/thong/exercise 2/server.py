@@ -5,10 +5,9 @@ import psycopg2
 class UserAPI:
     def __init__(self):
         self.url = "https://619b87292782760017445671.mockapi.io/"
-        self.endpoint = "students"
 
-    def get_all(self):
-        response = requests.get(f"{self.url}/{self.endpoint}")
+    def get_all(self, endpoint):
+        response = requests.get(f"{self.url}/{endpoint}")
         data = response.json()
         return data
 
@@ -23,16 +22,16 @@ class UserDatabase:
             port="5432",
         )
         self.cur = self.conn.cursor()
-        self.table = "students"
+        self.table = "mixed_users"
 
     def get_all(self):
         self.cur.execute(f"SELECT * FROM public.{self.table}")
         data = self.cur.fetchall()
         return data
 
-    def insert(self):
+    def insert(self, data):
         self.cur.execute(
-            f"""INSERT INTO public.students (id,name, phone)
-            VALUES ({data['id']}, '{data['name']}', {data['age']});"""
+            f"""INSERT INTO public.mixed_users (id,ten, tuoi)
+            VALUES ({data['id']}, '{data['ten']}', {data['tuoi']});"""
         )
-        self.conn.commit
+        self.conn.commit()
