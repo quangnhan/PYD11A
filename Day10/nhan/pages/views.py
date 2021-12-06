@@ -35,7 +35,7 @@ def product_list(request):
         list_product.append({
             "id": product[0],
             "category_id": product[1],
-            "category_name": product[1],
-            "name": product[1],
+            "category_name": product[2],
+            "name": product[3],
         })
     return JsonResponse(list_product, safe=False)
