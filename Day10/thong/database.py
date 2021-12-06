@@ -19,6 +19,10 @@ class Database:
         return data
 
     def get_all_product(self):
-        self.cur.execute(f"SELECT * FROM users")
+        self.cur.execute(
+            """
+        SELECT product.id, category.id, category.name, product.name FROM product
+        INNER JOIN category ON category.id = product.category_id"""
+        )
         data = self.cur.fetchall()
         return data
