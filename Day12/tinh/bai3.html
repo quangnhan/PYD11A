@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        padding-left: 15px;
+    }
+
+    .box {
+        display: flex;
+        text-align: center;
+    }
+    .box-item2 {
+        padding-left: 45px;
+    }
+
+    .box-item3 {
+        padding-left: 45px;
+    }
+
+</style>
+
+<body>
+    <div class="container">
+        <h6 class="text_header">Chi tiết chuyến bay</h6>
+        <div class="box">
+            <div class="box-item1">
+                <form action="/action_page.php">
+                    <label for="fromname">Từ:</label><br>
+                    <input list="browsers" name="browser" placeholder="Từ Sân Bay">
+                    <datalist id="browsers">
+                      <option value="Internet Explorer">
+                      <option value="Firefox">
+                      <option value="Chrome">
+                      <option value="Opera">
+                      <option value="Safari">
+                    </datalist>
+                </form>
+            </div>
+            
+            <div class="box-item2">
+               <form action="/action_page.php">
+                <label for="fromname">Đến</label><br>
+                <input list="browsers" placeholder="Đến Sân Bay">
+                <datalist id="browsers">
+                  <option value="Internet Explorer">
+                  <option value="Firefox">
+                  <option value="Chrome">
+                  <option value="Opera">
+                  <option value="Safari">
+                </datalist>
+              </form>
+            </div>
+                
+            <div class="box-item3">
+                <form action="/action_page.php">
+                    <label for="fromname">Số Hành Khách</label><br>
+                    <input list="browsers" name="browser" placeholder="Số Lượng Hành Khách">
+                    <datalist id="browsers">
+                      <option value="Internet Explorer">
+                      <option value="Firefox">
+                      <option value="Chrome">
+                      <option value="Opera">
+                      <option value="Safari">
+                    </datalist>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <div class="box-item1">
+                <form action="/action_page.php">
+                    <label for="ngaydi">Ngày Đi:</label><br>
+                    <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                </form>
+            </div>
+            
+            <div class="box-item2">
+                <form action="/action_page.php">
+                    <label for="ngaydi">Khứ Hồi:</label><br>
+                    <input type="datetime-local">
+                </form>
+            </div>
+                
+            <div class="box-item3">
+                <form action="/action_page.php">
+                    <label for="fromname">Hạng Ghế</label><br>
+                    <input list="browsers" name="browser">
+                    <datalist id="browsers">
+                      <option value="Internet Explorer">
+                      <option value="Firefox">
+                      <option value="Chrome">
+                      <option value="Opera">
+                      <option value="Safari">
+                    </datalist>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
