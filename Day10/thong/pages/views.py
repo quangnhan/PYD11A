@@ -37,6 +37,7 @@ def product_list(request):
     tuple_product = Database().get_all_product()
     list_product = []
     for product in tuple_product:
+<<<<<<< HEAD
         list_product.append(
             {
                 "id": product[0],
@@ -45,4 +46,12 @@ def product_list(request):
                 "name": product[3],
             }
         )
+=======
+        list_product.append({
+            "id": product[0],
+            "category_id": product[1],
+            "category_name": product[2],
+            "name": product[3],
+        })
+>>>>>>> dd5b8ab8e2e992460d59d4c755158c03b2701d13
     return JsonResponse(list_product, safe=False)
