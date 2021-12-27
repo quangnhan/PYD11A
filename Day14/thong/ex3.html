@@ -18,8 +18,8 @@
 <body class="bg-secondary">
     <div class="btn-group p-5">
 
-        <input id="inputs" type="text" name="name" placeholder="type in any name please">
-        <button id="button" type="submit">Submit</button>
+        <input id="name" type="text" name="name" placeholder="type in any name please">
+        <button id="submit" type="submit">Submit</button>
         <p id="text"></p>
 
     </div>
@@ -29,12 +29,14 @@
 
 <script>
 
-    $.ajax({
-        $("#button").click(function () {
-            url: "https://61c9a49020ac1c0017ed8d46.mocdkapi.io/users",
-                method: "post",
-                    data: {
-                name: $("#inputs").text()
+    $("#submit").click(function () {
+        var name = $("#name").val();
+
+        $.ajax({
+            url: "https://61c9a49020ac1c0017ed8d46.mockapi.io/users",
+            method: "post",
+            data: {
+                name: name
             },
             success: function (result) {
                 $("#text").html("Success");
@@ -43,9 +45,6 @@
                 $("#text").html("Error");
             }
         });
-
-
-
     });
 
 
