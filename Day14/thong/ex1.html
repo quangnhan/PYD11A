@@ -31,9 +31,9 @@
 
 
         $('#add').click(function () {
-            $("#number").text(function () {
-                return number + 1;
-            })
+            var number = $("#number").text()
+            number = parseInt(number)
+            $("#number").text(number + 1)
         });
 
         $('#minus').click(function () {
