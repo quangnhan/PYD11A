@@ -15,3 +15,18 @@ class Car(models.Model):
     
     def __str__(self):
         return self.name
+ 
+
+class Phone(models.Model):
+    name = models.CharField(max_length=100)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+class Room(models.Model):
+    name = models.CharField(max_length=100)
+    customer = models.ManyToManyField(Customer)
+
+    def __str__(self):
+        return self.name
