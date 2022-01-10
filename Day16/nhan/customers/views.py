@@ -11,8 +11,9 @@ def customer_list(request):
     return render(request, "customers/customer_list.html", data)
 
 def customer_create(request):
-    name = request.POST.get("name")
-    age = request.POST.get("age")
+    if request.method == "POST" and request.is_ajax():
+        name = request.POST.get("name")
+        age = request.POST.get("age")
 
-    Customer.objects.create(name=name, age=age)
-    return HttpResponse(True)
+        Customer.objects.create(name=name, age=age)
+        return HttpResponse(True)
