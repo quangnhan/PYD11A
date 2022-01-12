@@ -14,5 +14,5 @@ class Blog(models.Model):
     status = models.CharField(choices=BLOG_STATUS_CHOICES, default="draft", max_length=10)
 
     def __str__(self):
-        return self.name
+        return self.namee
     
