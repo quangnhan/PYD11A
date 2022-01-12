@@ -12,6 +12,7 @@ class Blog(models.Model):
     name = models.CharField(max_length=100)
     content = models.CharField(max_length=1000)
     status = models.CharField(choices=BLOG_STATUS_CHOICES, default="draft", max_length=10)
+    author = models.CharField(max_length=100, default="")
 
     def __str__(self):
         return self.namee

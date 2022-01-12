@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
 from .models import Blog
 
@@ -13,7 +13,12 @@ class BlogListView(ListView):
 class BlogCreateView(CreateView):
     model = Blog
     template_name = "blogs/blog_create.html"
-    fields = ('name', 'content', 'status')
+    fields = ('name', 'content', 'status', 'author')
 
     def get_success_url(self, **kwargs):      
         return reverse_lazy('blog_list')
+
+class BlogDetailView(DetailView):
+    model = Blog
+    template_name = "blogs/blog_detail.html"
+    context_object_name = "blog"
