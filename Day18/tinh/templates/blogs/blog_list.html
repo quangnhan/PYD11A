@@ -1,8 +1,6 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-
-
 <div class="row">
   <div class="col-10">
     <h1>Blog list</h1>
@@ -21,5 +19,4 @@
       <a href="{% url 'blog_detail' pk=blog.id %}" class="btn btn-secondary">Detail</a>
     </div>
 {% endfor %}
-
 {% endblock %}
