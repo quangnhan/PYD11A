@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-7">
+      <h1>Delete {{blog.name}}</h1>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-dark" type="submit" value="Delete">
+      </form>
+    </div>
+</div>
+{% endblock %}
