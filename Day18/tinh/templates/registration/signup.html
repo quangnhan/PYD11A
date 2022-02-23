@@ -1,0 +1,29 @@
+<!-- templates/registration/signup.html -->
+{% extends 'base/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Sign Up{% endblock title %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-8">
+      <h1>Signup</h1>
+      <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div>
+            Codervietnam requires that you have a secure password. If your password is too weak, make sure you:
+            <ul>
+                <li>Use at least 8 characters</li>
+                <li>Use a mix of upper and lower case characters</li>
+                <li>Use at least 1 number</li>
+                <li>Use at least 1 special character like “.”, “&”, or “*”</li>
+            </ul>
+        </div>
+        <button class="btn btn-dark" type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+{% endblock content %}
+  
