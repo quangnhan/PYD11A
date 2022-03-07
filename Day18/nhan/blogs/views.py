@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.views.generic import FormView
 from django.contrib.auth.models import User
 from .models import Blog
@@ -13,10 +13,11 @@ class BlogListView(ListView):
     template_name = "blogs/blog_list.html"
     context_object_name = "list_blog"
 
-class BlogCreateView(LoginRequiredMixin, CreateView):
+class BlogCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     model = Blog
     template_name = "blogs/blog_create.html"
     fields = ('name', 'content', 'status', 'author')
+    permission_required = ('blogs.add_blog', )
 
     def get_success_url(self, **kwargs):
         return reverse_lazy('blog_list')
